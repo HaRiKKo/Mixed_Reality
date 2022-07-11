@@ -4,6 +4,7 @@ Scholarship mixed reality project. Unity and Vuforia maze game.
 # Prerequisites
 - OpenJDK 8
 - the JDBC instance: MySQL **AND** PastgreSQL
+- Docker
 
 # First start 
 Clone the repot in your local environment. As example, you can use the command `git clone` with the SSH key. 
@@ -31,4 +32,27 @@ For PostgreSQL:
   CREATE DATABASE orders OWNER myuser;
   GRANT all privileges ON DATABASE orders TO myusr;
   ```
+ It's importante to notify that you don't need to create the tables in each database the file `schema.json` and `docker-compose.yml` will do it for you. 
+ 
+ After all databases and users created you have to load the schema.
+ 
+ First, you stop mysql and postresql that will free the 2 ports, respectively, '3306' and '5432' used by mysql and postgresql. 
+ ```
+ sudo service postgresql stop
+ sudo service mysql stop
+ ```
+ Second, you run the `docker-compose.ylm` file that load the schema. And you restart postgresql and mysql.
+ 
+ ```
+ docker-compose up -d
+ sudo service postgresql start
+ sudo service mysql start
+ java -jar scalardb-schema-loader-3.5.2.jar --config scalardb.properties --schema-file schema.json --coordinator
+ ```
+ 
+ 
+ 
+ 
+ 
+  
 
