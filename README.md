@@ -57,9 +57,9 @@ For PostgreSQL:
  # Execut and run the project
  
  The command to run the project is `./gradlew run --args="NameOfTheCommand"`. `NameOfTheCommand`, is one of the following command that can be use to realized some operation and transaction with the database. Until now we have only the following command:
- . `LoadInitialData` used to add some data to the database at the begining of the project.
- . `GetOrdersInfo` used to display the first 100 datas of each table in the database orders.
- . `GetCustomersInfo` used to display the first 100 datas of each table in the database customer.
+ - `LoadInitialData` used to add some data to the database at the begining of the project.
+ - `GetOrdersInfo` used to display the first 100 datas of each table in the database orders.
+ - `GetCustomersInfo` used to display the first 100 datas of each table in the database customer.
  
  Other command are in preparation and the `README.md` will be updated with each addition. 
  
